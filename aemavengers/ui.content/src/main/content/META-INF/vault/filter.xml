@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/aemavengers" mode="merge"/>
+    <filter root="/content/aemavengers" mode="merge"/>
+    <filter root="/content/dam/aemavengers" mode="merge">
+        <exclude pattern="/content/dam/aemavengers(/.*)?"/>
+        <include pattern="/content/dam/aemavengers/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/aemavengers/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/aemavengers" mode="merge"/>
+</workspaceFilter>
