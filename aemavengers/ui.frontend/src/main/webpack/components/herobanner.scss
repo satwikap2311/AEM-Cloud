@@ -1,0 +1,22 @@
+.cds-c-herobanner{
+	display:grid;
+	grid-template-columns: repeat(12, 1fr);
+	margin: 48px 0;
+    padding: 0 80px;
+	
+	.cmp-teaser__content {
+		grid-column: 1/-1;		
+		display: block;		
+		text-align: center;
+		background: #fff;
+		@media only screen and (min-width: 1024px) {
+			grid-column: 1/span 6;
+		}
+	}
+	.cmp-teaser__image {
+		grid-column: 1/-1;
+		@media only screen and (min-width: 1024px) {
+			grid-column: 7/span 12;
+		}
+	}
+}
