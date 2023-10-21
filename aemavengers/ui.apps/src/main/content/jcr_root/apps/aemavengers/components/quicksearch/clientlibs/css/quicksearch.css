@@ -1,0 +1,20 @@
+.cmp-search__item:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+    border: 1px solid #333; /* Add a border on hover */
+    color: #333; /* Change the text color on hover */
+}
+.cmp-search__item.selected {
+    background-color: #3399FF; /* Change the background color when selected */
+    color: #fff; /* Change the text color when selected */
+}
+.search-form-container {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+.cmp-search__form {
+    flex: 1; /* Allow the form to take up available space */
+    margin-right: 10px; /* Add margin between the form and button */
+}
+.submit_btn {
+    flex: 0; /* Don't grow the button to take up space */
+}
