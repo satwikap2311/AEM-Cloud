@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastModified="{Date}2023-10-18T16:13:03.214+05:30"
+        cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/aemavengers/settings/wcm/templates/xf-web-variation"
         cq:xfMasterVariation="{Boolean}true"
@@ -17,10 +19,54 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="aemavengers/components/separator"/>
             <text
+                jcr:lastModified="{Date}2023-10-16T15:08:55.460+05:30"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="aemavengers/components/text"
-                text="&lt;p>Copyright 2023, AEM Avengers.&amp;nbsp;All rights reserved.&lt;/p>&#xd;&#xa;&lt;p>345 Park Avenue,&amp;nbsp;San Jose, CA 95110-2704, USA&lt;/p>&#xd;&#xa;"
+                text="&lt;p>Copyright 2023, AEM Avengers.&amp;nbsp;All rights reserved.&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
                 textIsRich="true"/>
+            <button_youtube
+                jcr:created="{Date}2023-10-16T15:06:02.456+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T15:34:41.819+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Youtube"
+                sling:resourceType="aemavengers/components/button"
+                icon="/content/dam/aemavengers/twitter logo.jpg"
+                linkTarget="_self"
+                linkURL="https://twitter.com/?lang=en-in"/>
+            <button_786191974
+                jcr:created="{Date}2023-10-16T15:05:54.723+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T15:34:19.410+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="FaceBook"
+                sling:resourceType="aemavengers/components/button"
+                icon="/content/dam/aemavengers/facebook.jpg"
+                linkTarget="_self"
+                linkURL="https://www.facebook.com/"/>
+            <button_1781575603
+                jcr:created="{Date}2023-10-16T15:06:02.456+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T15:34:41.819+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Twitter(X)"
+                sling:resourceType="aemavengers/components/button"
+                icon="/content/dam/aemavengers/twitter logo.jpg"
+                linkTarget="_self"
+                linkURL="https://twitter.com/?lang=en-in"/>
+            <button_398863885
+                jcr:created="{Date}2023-10-18T15:26:53.879+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T15:29:38.616+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Contact Us"
+                sling:resourceType="aemavengers/components/button"
+                linkTarget="_self"/>
         </root>
     </jcr:content>
 </jcr:root>

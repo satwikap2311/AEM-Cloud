@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastModified="{Date}2023-10-18T18:42:25.282+05:30"
+        cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/aemavengers/settings/wcm/templates/xf-web-variation"
         cq:xfMasterVariation="{Boolean}true"
@@ -13,22 +15,54 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="aemavengers/components/container"
             layout="simple">
+            <logo/>
+            <articlenavigation
+                jcr:created="{Date}2023-10-18T17:00:32.560+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T17:00:32.560+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/articlenavigation"/>
+            <articlenavigation_1917386408
+                jcr:created="{Date}2023-10-18T17:00:45.662+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T17:00:45.662+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/articlenavigation"/>
+            <_x0031__1697633279710
+                jcr:primaryType="nt:unstructured"
+                offset="0"
+                width="4"/>
+            <headertitle
+                jcr:created="{Date}2023-10-18T18:23:22.677+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T18:23:22.677+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/headertitle"/>
+            <title
+                jcr:created="{Date}2023-10-18T18:30:45.706+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T18:39:14.993+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Group Title: AEM Avengers                                  AEM Articles         "
+                sling:resourceType="aemavengers/components/title"
+                logo="/content/dam/aemavengers/AEM_logo-1.png"
+                type="h2"/>
             <navigation
+                jcr:created="{Date}2023-10-18T18:40:10.140+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2023-10-18T18:42:25.169+05:30"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="aemavengers/components/navigation"
-                collectAllPages="false"
+                collectAllPages="true"
+                disableShadowing="false"
+                heading="Heading"
                 navigationRoot="/content/aemavengers/us/en"
-                skipNavigationRoot="false"
-                structureDepth="1"/>
-            <languagenavigation
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="aemavengers/components/languagenavigation"
-                navigationRoot="/content/aemavengers/us"
-                structureDepth="2"/>
-            <search
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="aemavengers/components/search"
-                searchRoot="/content/aemavengers/us"/>
+                structureStart="1"/>
         </root>
     </jcr:content>
 </jcr:root>
