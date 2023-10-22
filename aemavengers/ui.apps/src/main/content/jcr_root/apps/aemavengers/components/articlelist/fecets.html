@@ -1,0 +1,14 @@
+<!-- fecets.html -->
+<sly data-sly-use.articleList="com.aem.avengers.core.models.ArticleListModel">
+    <sly data-sly-test="${articleList.fecets}">
+        <sly data-sly-test.single="${articleList.allFecets.size >= 1}">
+          <div class="checkbox-list">
+            <sly data-sly-list.allFecets="${articleList.allFecets}">
+              <input id="checkbox" class="form-comp-input radio-check mr-1" name="${allFecets @ context = 'html'}" type="checkbox" />
+              <label for="checkbox">${articleList.allFecets[allFecets]}</label><br>
+            </sly>
+            <button class="filter_btn">filter</button>
+          </div>
+        </sly>
+    </sly>
+</sly>

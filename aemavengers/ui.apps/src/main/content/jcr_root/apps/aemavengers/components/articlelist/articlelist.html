@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+    	<div class="col-12 col-lg-4 p-0 mt-2">
+    		<sly data-sly-include="fecets.html"/>
+    	</div>
+        <div class="col-12 col-lg-8 pr-0 pl-0 pl-lg-4 mt-2 d-flex">
+            <div class="cmp-list col p-0">
+                <sly data-sly-use.list="com.adobe.cq.wcm.core.components.models.List"
+                    data-sly-use.articleList="com.aem.avengers.core.models.ArticleListModel"
+                    data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+                    data-sly-use.itemTemplate="item.html"
+                    data-sly-use.teaserTemplate="teaser.html"
+                    data-sly-list.item="${list.listItems}"
+                    id="${list.id}"
+                    data-cmp-data-layer="${list.data.json}">
+                    <div data-sly-test="${!list.displayItemAsTeaser}"
+                        class="cmp-list__item col" data-sly-call="${itemTemplate.item @ list = list, item = item}"
+                        data-cmp-data-layer="${item.data.json}"></div>
+                    <div data-sly-test="${list.displayItemAsTeaser && item.teaserResource}"
+                        class="cmp-list__item col" data-sly-call="${teaserTemplate.teaser @ item = item}"
+                        data-cmp-data-layer="${item.data.json}"></div>
+                </sly>
+            </div>
+         </div>
+     </div>
+     <div class="row">
+     	<div class="col-auto ml-auto mt-2 pr-0">
+        	<div id="pagination">
+                <button id="prev">Previous</button>
+                <button id="pages"></button>
+                <button id="next">Next</button>
+            </div>
+        </div>
+     </div>
+</div>
+
+<input type="hidden" id="currentNodePath" name="currentNodePath" value="${currentNode.path}">

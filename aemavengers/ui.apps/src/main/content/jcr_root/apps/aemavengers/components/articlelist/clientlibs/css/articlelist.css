@@ -1,0 +1,97 @@
+.flex-container{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 100px;
+    }
+    .flex-item{
+        padding:10px;
+        border: 1px solid #ccc; 
+        margin: 5px
+    }
+/* Add this CSS to your styles */
+.checkbox-list {
+    padding: 20px;
+    border: 2px solid #4e24dcfa;
+    height: 250px;
+    background-color: #4e24dc21;
+    border-radius: 5px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Add margin to separate items */
+}
+
+.cmp-list {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+}
+
+.cmp-list__item {
+   border: 2px solid #2470dcfa;
+    display: inline-block;
+    background-color: #279f941a;
+    padding: 1rem;
+    border-radius: 15px;
+    transition: transform .3s,box-shadow .3s;
+}
+
+.cmp-list__item:hover {
+    transform: scale(1.03); /* Increase the size a bit on hover */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+/* Add this CSS to your stylesheet */
+.cmp-teaser__link {
+    text-decoration: none;
+}
+.filter_btn {
+    position: absolute;
+    background-color: #0074D9; /* Background color */
+    color: #FFFFFF; /* Text color */
+    border: 2px solid #0074D9; /* Border color */
+    border-radius: 20px; /* Curved button borders */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style the button on hover */
+.filter_btn:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+}
+
+/* Normal button styles */
+button#prev, button#next {
+    background-color: #0074D9; /* Background color */
+    color: #FFFFFF; /* Text color */
+    border: 2px solid #0074D9; /* Border color */
+    border-radius: 20px; /* Curved button borders */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover styles */
+button#prev:hover, button#next:hover {
+    background-color: #0056b3; /* Background color on hover */
+    color: #FFFFFF; /* Text color on hover */
+}
+
+/* Disabled button styles */
+button#prev[disabled], button#next[disabled] {
+    background-color: #CCCCCC; /* Background color for disabled button */
+    border-color: #CCCCCC; /* Border color for disabled button */
+    color: #999999; /* Text color for disabled button */
+    cursor: not-allowed;
+}
+#pages{
+    background-color: #0074D9; /* Background color */
+    color: #FFFFFF; /* Text color */
+    border: 2px solid #0074D9; /* Border color */
+    border-radius: 20px; /* Curved button borders */
+    padding: 10px 20px;
+    cursor: not-allowed;
+    transition: background-color 0.3s, color 0.3s;
+}

@@ -1,3 +1,20 @@
+.cmp-search__input {
+  border: 2px solid #dc7c24fa; /* Add a border around each item */
+  display: inline-block;
+  //background-color: #dc44241a;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cmp-search__input:hover {
+    border: 2px solid #dc7c24fa;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+.cmp-search__input:focus {
+    border-color: #dc7c24fa; /* Change to your desired border color */
+    /* Add any additional styles you want when the input is focused */
+}
 .cmp-search__item:hover {
     background-color: #f0f0f0; /* Change the background color on hover */
     border: 1px solid #333; /* Add a border on hover */
@@ -12,9 +29,58 @@
     align-items: center; /* Align items vertically in the center */
 }
 .cmp-search__form {
-    flex: 1; /* Allow the form to take up available space */
+    width: 100%; /* Allow the form to take up available space */
     margin-right: 10px; /* Add margin between the form and button */
 }
 .submit_btn {
-    flex: 0; /* Don't grow the button to take up space */
+    border-color: #2d69a8a3;
+    /* background-color: #cbd2d8; */
+    color: #2a2e98;
+    flex: 0;
+}
+.submit_btn:hover {
+    background-color: #2d69a8a3; /* Change the background color on hover */
+    //color: #fcfdfea3;
+    color:#fff;
+}
+
+.btn_styling {
+    padding-top: 0.45rem;
+}
+.search-form-container {
+    display: flex;
+    align-items: center;
+}
+.cmp-search__results {
+    display: none;
+    overflow-y: auto;
+    min-width: 81.5%;
+    max-height: 10rem;
+    position: absolute;
+    top: 100%;
+    left: 1.15rem;
+    z-index: 999999;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.cmp-search__input {
+    padding-left: 2rem;
+    padding-right: 0px;
+    height: 100%;
+    border-color: #387cc3a1;
+    width: 100%;
+    box-sizing: border-box;
+}
+.cmp-list__item {
+	-ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+.cmp-list__item:not(:last-child) {
+    margin-right: 5px
+}
+.quicksearch{
+    padding-bottom: 2rem;
 }

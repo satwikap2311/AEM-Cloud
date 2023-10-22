@@ -92,10 +92,9 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 			String queryString = "/jcr:root".concat(pagePath).concat("//element(*, cq:Page)");
 			LOGGER.info("searchKeyword :: {}", searchKeyword);
 			if (StringUtils.isNotBlank(searchKeyword)) {
-				queryString = queryString.concat("[jcr:like(fn:lower-case(jcr:content/@" + NameConstants.PN_TAGS
-						+ "), '%" + searchKeyword + "%')" + " or jcr:like(fn:lower-case(jcr:content/@author), '%"
-						+ searchKeyword + "%')" + " or jcr:like(fn:lower-case(jcr:content/@" + JcrConstants.JCR_TITLE
-						+ "), '%" + searchKeyword + "%')]");
+				queryString = queryString.concat("[jcr:like(fn:lower-case(jcr:content/@author), '%" + searchKeyword
+						+ "%')" + " or jcr:like(fn:lower-case(jcr:content/@" + JcrConstants.JCR_TITLE + "), '%"
+						+ searchKeyword + "%')]");
 			}
 			LOGGER.info("queryString :: {}", queryString);
 			Query query = queryManager.createQuery(queryString, "xpath");
@@ -105,10 +104,10 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 			long size = nodes.getSize();
 			nodes = query.execute().getNodes();
 			JsonArray jsonArr = new JsonArray();
-			JsonObject sizeObj = new JsonObject();
-			sizeObj.addProperty("articlesSize", size);
-			jsonArr.add(sizeObj);
 			if (StringUtils.isNotBlank(searchKeyword)) {
+				JsonObject sizeObj = new JsonObject();
+				sizeObj.addProperty("articlesSize", size);
+				jsonArr.add(sizeObj);
 				Integer hit = 0;
 				if (StringUtils.isNotBlank(currentHit)) {
 					hit = Integer.valueOf(currentHit);
@@ -125,21 +124,22 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 				LOGGER.info("offset :: {}", offset);
 				query.setLimit(limit);
 				query.setOffset(offset);
+				nodes = query.execute().getNodes();
 			}
 			while (nodes.hasNext()) {
 				Node node = nodes.nextNode();
 				Page page = pageManager.getPage(node.getPath());
 				String tageTitle = "";
 				if (page != null) {
-					Tag[] cqTags = page.getTags();
-					for (Tag tag : cqTags) {
-						tageTitle = tag.getTitle().toLowerCase();
-					}
+					/*
+					 * Tag[] cqTags = page.getTags(); for (Tag tag : cqTags) { tageTitle =
+					 * tag.getTitle().toLowerCase(); }
+					 */
 				}
 				String pageTitle = page.getTitle().toLowerCase();
 				ValueMap pageProperties = page.getProperties();
 				String author = "";
-				if (pageProperties.containsKey("author") && StringUtils.isNotBlank(currentHit)) {
+				if (pageProperties.containsKey("author")) {
 					author = pageProperties.get("author", String.class).toLowerCase();
 				}
 				if (StringUtils.isNotBlank(searchKeyword)) {
@@ -151,11 +151,10 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 							keyWordList.add(author);
 						}
 					}
-					if (StringUtils.isNotBlank(tageTitle) && tageTitle.startsWith(typeKeyword)) {
-						if (!keyWordList.contains(tageTitle)) {
-							keyWordList.add(tageTitle);
-						}
-					}
+					/*
+					 * if (StringUtils.isNotBlank(tageTitle) && tageTitle.startsWith(typeKeyword)) {
+					 * if (!keyWordList.contains(tageTitle)) { keyWordList.add(tageTitle); } }
+					 */
 					if (StringUtils.isNotBlank(pageTitle) && pageTitle.startsWith(typeKeyword)) {
 						if (!keyWordList.contains(pageTitle)) {
 							keyWordList.add(pageTitle);

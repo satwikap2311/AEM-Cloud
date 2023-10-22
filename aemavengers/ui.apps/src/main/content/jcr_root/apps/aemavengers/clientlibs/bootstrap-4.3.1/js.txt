@@ -1,0 +1,2 @@
+#base=src/js
+bootstrap.min.js  

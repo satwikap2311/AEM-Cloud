@@ -60,6 +60,7 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 		String facets = request.getParameter("facets");
 		String nodePath = request.getParameter("listComponentNode");
 		String currentHit = request.getParameter("currentHit");
+		String searchKeyword = request.getParameter("searchKeyword");
 
 		try {
 			Resource list = resourceResolver.getResource(nodePath);
@@ -95,17 +96,22 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 			LOGGER.info("queryString :: {}", queryString);
 			if (StringUtils.isNotBlank(facets)) {
 				queryString = queryString.concat("[");
+				if (StringUtils.isNotBlank(searchKeyword)) {
+					queryString = queryString.concat("(jcr:like(fn:lower-case(jcr:content/@author), '%" + searchKeyword
+							+ "%')" + " or jcr:like(fn:lower-case(jcr:content/@" + JcrConstants.JCR_TITLE + "), '%"
+							+ searchKeyword + "%')) and ");
+				}
 				List<String> facetslist = Arrays.asList(facets.split(","));
 				for (int i = 0; i < facetslist.size(); i++) {
 					if (i == 0) {
 						queryString = queryString.concat(
-								"jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%" + facetslist.get(i) + "%')");
+								"(jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%" + facetslist.get(i) + "%')");
 					} else {
 						queryString = queryString.concat(" or jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%"
 								+ facetslist.get(i) + "%')");
 					}
 				}
-				queryString = queryString.concat("]");
+				queryString = queryString.concat(")]");
 			}
 			LOGGER.info("queryString :: {}", queryString);
 
