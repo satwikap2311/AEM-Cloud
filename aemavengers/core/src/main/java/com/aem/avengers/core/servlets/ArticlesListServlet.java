@@ -62,7 +62,6 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 		String currentHit = request.getParameter("currentHit");
 
 		try {
-
 			Resource list = resourceResolver.getResource(nodePath);
 			Node listNode = list.adaptTo(Node.class);
 			LOGGER.info("listNode :: {}", listNode);
@@ -75,19 +74,22 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 				parentPage = listNode.getProperty("parentPage").getString();
 			}
 
-			int hit = Integer.valueOf(currentHit);
-			int maxItemsInt = 0;
-			if (StringUtils.isNotBlank(maxItems)) {
-				maxItemsInt = Integer.valueOf(maxItems);
-			}
+			int limit = 0;
+			int offset = 0;
+			if (StringUtils.isNotBlank(currentHit)) {
+				int hit = Integer.valueOf(currentHit);
+				int maxItemsInt = 0;
+				if (StringUtils.isNotBlank(maxItems)) {
+					maxItemsInt = Integer.valueOf(maxItems);
+				}
 //			int offset = (hit) * maxItemsInt;
 //			int endValue = offset + maxItemsInt;
 
-			int limit = maxItemsInt * hit;
-			int offset = limit - maxItemsInt;
-
-			LOGGER.info("limit :: {}", limit);
-			LOGGER.info("offset :: {}", offset);
+				limit = maxItemsInt * hit;
+				offset = limit - maxItemsInt;
+				LOGGER.info("limit :: {}", limit);
+				LOGGER.info("offset :: {}", offset);
+			}
 
 			String queryString = "/jcr:root".concat(parentPage).concat("//element(*, cq:Page)");
 			LOGGER.info("queryString :: {}", queryString);
@@ -96,11 +98,11 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 				List<String> facetslist = Arrays.asList(facets.split(","));
 				for (int i = 0; i < facetslist.size(); i++) {
 					if (i == 0) {
-						queryString = queryString
-								.concat("jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%" + facetslist.get(i) + "%')");
+						queryString = queryString.concat(
+								"jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%" + facetslist.get(i) + "%')");
 					} else {
-						queryString = queryString
-								.concat(" or jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%" + facetslist.get(i) + "%')");
+						queryString = queryString.concat(" or jcr:like(jcr:content/@" + NameConstants.PN_TAGS + ", '%"
+								+ facetslist.get(i) + "%')");
 					}
 				}
 				queryString = queryString.concat("]");
@@ -111,30 +113,32 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 			Query query = queryManager.createQuery(queryString, "xpath");
 			NodeIterator nodes = query.execute().getNodes();
 			long size = nodes.getSize();
-			query.setOffset(offset);
-			query.setLimit(limit);
-			nodes = query.execute().getNodes();
-			LOGGER.info("nodes :: {}", nodes);
 			JsonArray jsonArr = new JsonArray();
 			JsonObject sizeObj = new JsonObject();
-			sizeObj.addProperty("size", size);
+			sizeObj.addProperty("articlesSize", size);
 			jsonArr.add(sizeObj);
+			if (StringUtils.isNotBlank(currentHit)) {
+				query.setOffset(offset);
+				query.setLimit(limit);
+				nodes = query.execute().getNodes();
+				LOGGER.info("nodes :: {}", nodes);
 
 //			int loopval = 0;
-			while (nodes.hasNext()) {
+				while (nodes.hasNext()) {
 //				JsonObject jsonObj = new JsonObject();
-				Node node = nodes.nextNode();
-				String pagePath = node.getPath();
-				if (StringUtils.isNotBlank(pagePath) && pagePath.contains("/" + JcrConstants.JCR_CONTENT)) {
-					pagePath = pagePath.replace(("/" + JcrConstants.JCR_CONTENT), "");
+					Node node = nodes.nextNode();
+					String pagePath = node.getPath();
+					if (StringUtils.isNotBlank(pagePath) && pagePath.contains("/" + JcrConstants.JCR_CONTENT)) {
+						pagePath = pagePath.replace(("/" + JcrConstants.JCR_CONTENT), "");
 
-				}
-				LOGGER.info("node :: {}", pagePath);
-				Page page = pageManager.getPage(pagePath);
-				LOGGER.info("page :: {}", page.getPath());
-				if (page != null && pagePath.equals(parentPage)) {
-					jsonArr.add(avengersBasicService.addPageProperties(page));
+					}
+					LOGGER.info("node :: {}", pagePath);
+					Page page = pageManager.getPage(pagePath);
+					LOGGER.info("page :: {}", page.getPath());
+					if (page != null && !pagePath.equals(parentPage)) {
+						jsonArr.add(avengersBasicService.addPageProperties(page));
 //					LOGGER.info("jsonObj :: {}", jsonObj);
+					}
 				}
 			}
 
