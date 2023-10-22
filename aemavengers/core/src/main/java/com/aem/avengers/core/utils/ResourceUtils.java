@@ -20,4 +20,18 @@ public class ResourceUtils  extends ResourceUtil{
 		}
 		return foundResources;
 	}
+	public static <T> List<T> getListFromResource(Resource resource, Class<T> model) {
+		List<T> models = new LinkedList<>();
+		if (null == resource) {
+			return models;
+		}
+		Iterator<Resource> children = resource.listChildren();
+		while (children.hasNext()) {
+			Resource child = children.next();
+			if (null != child) {
+				models.add(child.adaptTo(model));
+			}
+		}
+		return models;
+	}
 }

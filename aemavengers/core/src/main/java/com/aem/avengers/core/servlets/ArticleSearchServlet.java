@@ -27,9 +27,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aem.avengers.core.services.AvengersBasicService;
+import com.day.cq.commons.jcr.JcrConstants;
 import com.day.cq.tagging.Tag;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
+import com.day.cq.wcm.api.constants.NameConstants;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -62,6 +64,7 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 			String maxItems = "";
 			int keyWordOffSet = 0;
 			if (StringUtils.isNotBlank(typeKeyword)) {
+				typeKeyword = typeKeyword.toLowerCase();
 				nodePath = request.getRequestPathInfo().getSuffix();
 				String resultsOffset = request.getParameter("resultsOffset");
 				if (StringUtils.isNotBlank(resultsOffset)) {
@@ -87,9 +90,24 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 			}
 
 			String queryString = "/jcr:root".concat(pagePath).concat("//element(*, cq:Page)");
+			LOGGER.info("searchKeyword :: {}", searchKeyword);
+			if (StringUtils.isNotBlank(searchKeyword)) {
+				queryString = queryString.concat("[jcr:like(fn:lower-case(jcr:content/@" + NameConstants.PN_TAGS
+						+ "), '%" + searchKeyword + "%')" + " or jcr:like(fn:lower-case(jcr:content/@author), '%"
+						+ searchKeyword + "%')" + " or jcr:like(fn:lower-case(jcr:content/@" + JcrConstants.JCR_TITLE
+						+ "), '%" + searchKeyword + "%')]");
+			}
 			LOGGER.info("queryString :: {}", queryString);
 			Query query = queryManager.createQuery(queryString, "xpath");
 			List<String> keyWordList = new LinkedList<String>();
+			QueryResult result = query.execute();
+			NodeIterator nodes = result.getNodes();
+			long size = nodes.getSize();
+			nodes = query.execute().getNodes();
+			JsonArray jsonArr = new JsonArray();
+			JsonObject sizeObj = new JsonObject();
+			sizeObj.addProperty("articlesSize", size);
+			jsonArr.add(sizeObj);
 			if (StringUtils.isNotBlank(searchKeyword)) {
 				Integer hit = 0;
 				if (StringUtils.isNotBlank(currentHit)) {
@@ -99,8 +117,6 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 				if (StringUtils.isNotBlank(maxItems)) {
 					maxItemsInt = Integer.valueOf(maxItems);
 				}
-//				int offset = (hit) * maxItemsInt;
-//				int endValue = offset + maxItemsInt;
 
 				int limit = maxItemsInt * hit;
 				int offset = limit - maxItemsInt;
@@ -110,53 +126,40 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 				query.setLimit(limit);
 				query.setOffset(offset);
 			}
-			QueryResult result = query.execute();
-			NodeIterator nodes = result.getNodes();
-			String contentStr = "";
-			JsonArray jsonArr = new JsonArray();
 			while (nodes.hasNext()) {
 				Node node = nodes.nextNode();
 				Page page = pageManager.getPage(node.getPath());
-				String tageName = "";
+				String tageTitle = "";
 				if (page != null) {
 					Tag[] cqTags = page.getTags();
 					for (Tag tag : cqTags) {
-						String tagID = tag.getTagID();
-						tageName = tag.getName().toLowerCase();
-						contentStr = contentStr + tagID + " ";
+						tageTitle = tag.getTitle().toLowerCase();
 					}
 				}
 				String pageTitle = page.getTitle().toLowerCase();
-				contentStr = contentStr + pageTitle;
 				ValueMap pageProperties = page.getProperties();
 				String author = "";
-				if (pageProperties.containsKey("author")) {
+				if (pageProperties.containsKey("author") && StringUtils.isNotBlank(currentHit)) {
 					author = pageProperties.get("author", String.class).toLowerCase();
-					contentStr = contentStr + author;
 				}
-				LOGGER.info("contentStr :: {}", contentStr);
-				if (StringUtils.isNotBlank(searchKeyword) && StringUtils.isNotBlank(contentStr)
-						&& StringUtils.isNotBlank(searchKeyword)
-						&& StringUtils.containsIgnoreCase(contentStr, searchKeyword)) {
+				if (StringUtils.isNotBlank(searchKeyword)) {
 					jsonArr.add(avengersBasicService.addPageProperties(page));
-				} else if (StringUtils.isNotBlank(typeKeyword)) {
+				}
+				if (StringUtils.isNotBlank(typeKeyword)) {
 					if (StringUtils.isNotBlank(author) && author.startsWith(typeKeyword)) {
 						if (!keyWordList.contains(author)) {
 							keyWordList.add(author);
 						}
-//						jsonArr.add(author.toLowerCase());
 					}
-					if (StringUtils.isNotBlank(tageName) && tageName.startsWith(typeKeyword)) {
-						if (!keyWordList.contains(tageName)) {
-							keyWordList.add(tageName);
+					if (StringUtils.isNotBlank(tageTitle) && tageTitle.startsWith(typeKeyword)) {
+						if (!keyWordList.contains(tageTitle)) {
+							keyWordList.add(tageTitle);
 						}
-//						jsonArr.add(tageName.toLowerCase());
 					}
 					if (StringUtils.isNotBlank(pageTitle) && pageTitle.startsWith(typeKeyword)) {
 						if (!keyWordList.contains(pageTitle)) {
 							keyWordList.add(pageTitle);
 						}
-//						jsonArr.add(pageTitle.toLowerCase());
 					}
 
 				}

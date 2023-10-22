@@ -42,6 +42,7 @@ public class AvengersBasicServiceImpl implements AvengersBasicService {
 			String formatedDate = simpleFormat.format(date);
 			jsonObj.addProperty("date", formatedDate);
 		}
+		jsonObj.addProperty("pagePath", page.getPath());
 		return jsonObj;
 	}
 }
