@@ -19,7 +19,9 @@ header.experiencefragment {
         }
 
     }
-
+    .cmp-languagenavigation__item--level-0 {
+        margin-bottom: 0 !important;
+    }
     .cmp-languagenavigation__group { 
         display: block;
         .cmp-list__item-title {
@@ -50,10 +52,11 @@ header.experiencefragment {
         align-items: center;
         
         li{
-            text-align: center;
+           // text-align: center;
             font-size: 16px;
             font-weight: bold;
             line-height: 0;
+            padding-left: 6px;
         }
         img {
         width: 50px;
@@ -67,6 +70,7 @@ header.experiencefragment {
         ul{
             li{
                 font-size: 30px;
+                
             }
             img {
             width: 100px;
