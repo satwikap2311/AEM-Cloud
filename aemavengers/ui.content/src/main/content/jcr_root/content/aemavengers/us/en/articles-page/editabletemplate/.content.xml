@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:24:21.641+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-basics,aem-avengers:aem-basics/editable-template]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Editable Template"
+        sling:resourceType="aemavengers/components/page"
+        pageTitle="Editable Template"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T09:59:22.400+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:59:22.400+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T09:59:31.328+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:59:55.456+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;p>Editable templates allow specialized authors to create and update page templates and manage advanced policy configurations with Adobe Experience Manager (AEM) Sites.&lt;/p>&#xd;&#xa;&lt;p>Editable Templates are the recommendation for building new AEM Sites.&lt;/p>&#xd;&#xa;&lt;p>Editable templates in AEM are a type of template that allows authors to edit the content of the template without having to modify the template code.&lt;/p>&#xd;&#xa;&lt;p>With editable templates, the pieces that make a page are isolated within components. You can configure the necessary combinations of components in a UI so that you eliminate the need for a new page component to be developed for each page variation.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Benefits of Editable Templates in AEM&lt;/p>&#xd;&#xa;&lt;p>Here are some of the benefits of using editable templates in AEM:&lt;/p>&#xd;&#xa;&lt;p>Increased author productivity: Authors can edit the content of templates without having to modify the template code. This can save time and improve productivity.&lt;/p>&#xd;&#xa;&lt;p>Improved flexibility: Editable templates allow authors to create a wide variety of pages without having to modify the template code. This can improve flexibility and make it easier to meet the needs of different users.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Reduced maintenance costs: Editable templates can help to reduce maintenance costs by making it easier to update templates and pages.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>editable templates are the preferred option for creating pages in AEM. They are more flexible and allow non-developers to create pages. Static templates should only be used when there is a specific need for a page with a static structure.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:24:21.633+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:23:58.402+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-frontend,aem-avengers:aem-frontend/component]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Component "
+        sling:resourceType="aemavengers/components/page"
+        pageTitle="Component"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T09:57:37.296+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:57:37.296+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T09:57:46.223+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:58:21.779+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;p>AEM component is a block of code or a specific functionality to showcase on the webpage.&lt;/p>&#xd;&#xa;&lt;p>Components are re-usable, modular units used to achieve specific functionality that can be present on webpage. The main advantage of having a component is it is modular and isolated individual units that can be reused across the application.&lt;/p>&#xd;&#xa;&lt;p>An AEM component is defined as a node and properties. In the project, these nodes and properties are represented as XML files in the ui. apps module.&lt;/p>&#xd;&#xa;&lt;p>AEM components are used to hold, format, and render the content made available on your webpages. When authoring pages, the components allow the authors to edit and configure the content. When constructing a Commerce site the components can, for example, collect and render information from the catalog. There are two sets of Adobe-provided AEM components available: Core Components. Foundation Components.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>There are two approaches for creating a custom component in adobe cq:-&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;p>By copying component from libs folder and then renaming it.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;p>By creating a new component and then point it to libs-&amp;gt; foundation component.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:23:58.355+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

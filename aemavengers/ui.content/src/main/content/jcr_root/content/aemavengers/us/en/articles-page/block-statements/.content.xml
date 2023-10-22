@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:23:20.551+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-frontend,aem-avengers:aem-frontend/block-statements]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Block Statements"
+        sling:resourceType="aemavengers/components/page"
+        pageTitle="Block Statements"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T09:52:57.779+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:52:57.779+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T09:53:03.863+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:54:50.575+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;p>HTML Template Language (HTL) block statements are custom data attributes added directly to existing HTML. This allows easy and unobtrusive annotation of a prototype static HTML page, converting it to a functioning dynamic template without breaking the validity of the HTML code.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Block Overview&lt;br>&#xd;&#xa;HTL block plugins are defined by data-sly-* attributes set on HTML elements. Elements can have a closing tag or be self-closing. Attributes can have values (which can be static strings or expressions), or simply be boolean attributes (without a value).&lt;br>&#xd;&#xa;All evaluated data-sly-* attributes are removed from the generated markup.&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;Identifiers&lt;br>&#xd;&#xa;A block statement can also be followed by an identifier:&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;&lt;br>&#xd;&#xa;The identifier can be used by the block statement in various ways, here are some examples:&lt;br>&#xd;&#xa;${navigation.title}&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>${isEditMode}&lt;/p>&#xd;&#xa;&lt;p>${child.properties.jcr:title}&lt;/p>&#xd;&#xa;&lt;p>Hello World&lt;/p>&#xd;&#xa;&lt;p>Top top-level identifiers are case-insensitive (because they can be set through HTML attributes which are case-insensitive), but all their properties are case-sensitive.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:23:20.551+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

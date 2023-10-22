@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:06:02.384+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-backend,aem-avengers:aem-backend/sling-servlets]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sling Servlets"
+        sling:resourceType="aemavengers/components/page"
+        author="Adobe"
+        date="{Date}2023-10-16T00:00:00.000+05:30"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T09:43:12.879+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:43:30.133+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"
+                        altValueFromDAM="false"
+                        date="{Date}2023-10-23T00:00:00.000+05:30"
+                        imageFromPageImage="false"
+                        isDecorative="false"
+                        titleFromPage="true"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T09:43:48.001+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:44:23.685+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;p>A Servlet is a class used to extend the capabilities of servers that host applications accessed by means of a request-response programming model. For such applications, Servlet technology defines HTTP-specific servlet classes.&amp;nbsp;&lt;br>&#xd;&#xa;All servlets must implement the Servlet interface, which defines life-cycle methods.&lt;/p>&#xd;&#xa;&lt;p>A servlet in AEM can be registered as OSGi service: you can extend SlingSafeMethodsServlet for read-only implementation or SlingAllMethodsServlet to implement all RESTful operations.&lt;/p>&#xd;&#xa;&lt;p>Servlet are basically used when front-end developers need to make ajax call and want to get response in form of Json. There are two ways in which a developer can register a servlet using path or selector.&lt;/p>&#xd;&#xa;&lt;p>You can declare servlet using static paths or resourceTypes (eventually combined with selectors and extensions): you can use SlingServlet annotations or Component/Service/Properties.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Registering a Servlet by resource type is the preferred approach in Sling, because request handling is independent of where the resources are located. Therefore, there is no need for a predefined static path.&lt;/p>&#xd;&#xa;&lt;p>Only with resource type registration you fully utilize the dynamic, resource-oriented approach of the Sling framework: moreover, Sling Engine will take care of permissions for you. Users who cannot access a particular resource will not be able to invoke the servlet.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:06:02.269+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

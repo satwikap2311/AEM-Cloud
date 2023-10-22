@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:24:34.432+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-basics,aem-avengers:aem-basics/experience-fragments]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Experience Fragments"
+        sling:resourceType="aemavengers/components/page"
+        pageTitle="Experience Fragments"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T10:00:48.809+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T10:00:48.809+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T10:00:55.690+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T10:01:15.120+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;p>Experience Fragments enables content authors to reuse content across channels including Sites pages and third-party systems. An Experience Fragment is a grouped set of components that when combined creates an experience. For example, a Title, Image, Description, and Call To Action Button can be combined to form a teaser experience. The teaser experience would be considered an Experience Fragment.&lt;/p>&#xd;&#xa;&lt;p>An Experience Fragment is a group of one or more components including content and layout that can be referenced within pages. They can contain any component.&lt;/p>&#xd;&#xa;&lt;p>An Experience Fragment:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;p>Is a part of an experience (page).&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>Can be used across multiple pages.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;p>Is based on a template (editable only) to define structure and components.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>This template is used to create the root page of the Experience Fragment.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>Is made up of one or more components, with layout, in a paragraph system.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>Can contain other experience fragments.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>Can be combined with other components (including other Experience Fragments) to form a complete page (experience).&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;p>One, or more, variations can be created, based on the root page.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>These variations may share content and/or components.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>&lt;p>Can be broken down into building blocks that can be used across multiple variations of the fragment.&lt;/p>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>Experience Fragments should be used: Whenever you want to reuse experiences.Experiences that will be reused with same or similar content&lt;/p>&#xd;&#xa;&lt;p>Experience Fragments can also be helpful in specific use-cases, such as a header or footer. In this case, you may want to retain the same look and feel, but you might want to provide different links on different pages. To do this, you could simply create two unique Experience Fragments. The structure of the fragments would remain the same, but the content within each Experience Fragment would be unique to that fragment.&lt;/p>&#xd;&#xa;&lt;p>Experience Fragments allow content authors to re-use the same content across channels, including AEM Sites pages and third-party systems. In other words, they're for reusing experiences (i.e. grouped components) in many places, instead of loading the same components with the same content into every page; this allows you to author an experience fragment one time and that change is propagated to every page that contains that experience fragment.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:24:34.404+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

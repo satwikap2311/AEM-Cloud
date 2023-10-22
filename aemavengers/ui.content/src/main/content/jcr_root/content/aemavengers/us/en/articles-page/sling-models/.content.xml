@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:22:15.063+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-backend,aem-avengers:aem-backend/sling-models]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Sling Models"
+        sling:resourceType="aemavengers/components/page"
+        author="Adobe"
+        date="{Date}2023-10-01T00:00:00.000+05:30"
+        pageTitle="Sling Models"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T09:40:53.725+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:41:23.837+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"
+                        altValueFromDAM="false"
+                        date="{Date}2023-10-15T00:00:00.000+05:30"
+                        imageFromPageImage="false"
+                        isDecorative="false"
+                        titleFromPage="true"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T09:41:37.481+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T09:42:04.237+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;p>AEM Sling Models are Java classes that act as a bridge between the content stored in AEM and the Java code that developers write. They provide a convenient and robust way to map AEM components’ dialog data, resources, and properties into Java objects. Sling Models help developers to write clean, reusable, and testable code by abstracting the complexities of JCR (Java Content Repository) API usage.&lt;/p>&#xd;&#xa;&lt;p>The core principle behind Sling Models is to use annotations to define a mapping between AEM components and Java classes. These annotations provide valuable information about the property names, resource types, and relationships, which AEM uses to instantiate and populate Java objects with data from the repository.&lt;/p>&#xd;&#xa;&lt;p>Advantages of AEM Sling Models:&lt;/p>&#xd;&#xa;&lt;p>Type Safety: Sling Models enable strong typing, reducing the risk of runtime errors and improving the maintainability of code.&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Abstraction: They abstract away the low-level JCR API calls, making code more concise and easier to read.&lt;/p>&#xd;&#xa;&lt;p>Dependency Injection: Sling Models support dependency injection, allowing easy integration with other AEM features like OSGi services.&lt;/p>&#xd;&#xa;&lt;p>Testability: Sling Models facilitate unit testing, as the logic is written in Java classes without direct dependencies on AEM-related classes.&lt;/p>&#xd;&#xa;&lt;p>Reusability: Since Sling Models are just Java classes, they can be used across different projects or components, promoting code reusability.&amp;nbsp;&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:22:15.057+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>

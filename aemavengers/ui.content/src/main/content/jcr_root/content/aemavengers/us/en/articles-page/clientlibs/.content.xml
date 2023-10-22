@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-22T17:19:36.874+05:30"
+        cq:lastModifiedBy="admin"
+        cq:tags="[aem-avengers:aem-ui,aem-avengers:aem-ui/client-libs]"
+        cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Client libs"
+        sling:resourceType="aemavengers/components/page"
+        pageTitle="Client libs"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="aemavengers/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="aemavengers/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="aemavengers/components/container"
+                    layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T10:26:20.234+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T10:26:20.234+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/herobanner"/>
+                    <text
+                        jcr:created="{Date}2023-10-22T10:26:25.528+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-22T10:26:57.941+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;h4>Clientlibs or Client libraries in aem is one of the most widely used features provided by Adobe, it allows us to not only manage our&amp;nbsp;client side resources like ( JavaScript, CSS, images, fonts etc ), but also provide options&amp;nbsp;to debug, minify,merge and gzip the client-side code.&lt;/h4>&#xd;&#xa;&lt;h4>In this tutorial i will cover all the basic functionalities Client Library Folder provides and how we can use them in our components. After completing this tutorial you will have a clear understanding about:-&lt;/h4>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>&lt;a href=&quot;http://www.aemcq5tutorials.com/tutorials/create-client-libraries-in-aem/#use_clientlibs_aem&quot;>How to use Clientlibs in AEM&lt;/a>.&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;http://www.aemcq5tutorials.com/tutorials/create-client-libraries-in-aem/#clientlibrary_folder_structure&quot;>Client Library folder structure and its importance&lt;/a>.&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;http://www.aemcq5tutorials.com/tutorials/create-client-libraries-in-aem/#minify_debug_gzip_restrict_clientlib_aem&quot;>How to Minify, Gzip, debug and restrict Client Libraries creation under libs&lt;/a>.&lt;/li>&#xd;&#xa;&lt;li>&lt;a href=&quot;http://www.aemcq5tutorials.com/tutorials/create-client-libraries-in-aem/#faq&quot;>FAQ&lt;/a>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h4>How to use Clientlibs in AEM:-&lt;/h4>&#xd;&#xa;&lt;p>&lt;a name=&quot;use_clientlibs_aem&quot; id=&quot;use_clientlibs_aem&quot;>&lt;/a>&lt;br>&#xd;&#xa;Using Client libraries in aem is very easy, we can create a client library folder either under apps, etc or libs but it is strongly recommended not to create client library folder under libs. This we will see later how we can restrict client library folder creation in aem.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>Go to&amp;nbsp;Crxde.&lt;/li>&#xd;&#xa;&lt;li>Select&amp;nbsp;&lt;i>apps/project/&amp;lt;component&lt;/i>&amp;gt;&lt;/li>&#xd;&#xa;&lt;li>Right Click and&amp;nbsp;create new node.&lt;ul>&#xd;&#xa;&lt;li>Name: clientlib (You can use any name)&lt;/li>&#xd;&#xa;&lt;li>Type:&amp;nbsp;cq:ClientLibraryFolder&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>Add categories property to clientlib node(Only mandatory property).&lt;ul>&#xd;&#xa;&lt;li>Name: categories&lt;/li>&#xd;&#xa;&lt;li>Type: String[]&lt;/li>&#xd;&#xa;&lt;li>Value: apps.aem.traning (This name will be used to identify respective clientlibs folder)&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>Create a&amp;nbsp;css and js folder&amp;nbsp;parallel to clientlib folder, where our css and js files will be placed.&lt;/li>&#xd;&#xa;&lt;li>Create a&amp;nbsp;js.txt and css.txt&amp;nbsp;file parallel to cilenlibs folder.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://i0.wp.com/www.aemcq5tutorials.com/wp-content/uploads/2016/08/create-clientlibs-aem.png&quot;>&lt;img src=&quot;https://i0.wp.com/www.aemcq5tutorials.com/wp-content/uploads/2016/08/create-clientlibs-aem.png?resize=240%2C242&quot; alt=&quot;create clientlibs aem&quot; width=&quot;240&quot; height=&quot;NaN&quot;>&lt;/a>&lt;/p>&#xd;&#xa;&lt;p>Lets not go deeper into it as there are many tutorials available on how to create clientlibs but what we are interested in. Is the importance and role of creating such structure.&lt;/p>&#xd;&#xa;&lt;h4>Client Library folder structure and its importance:-&lt;/h4>&#xd;&#xa;&lt;p>&lt;a name=&quot;clientlibrary_folder_structure&quot; id=&quot;clientlibrary_folder_structure&quot;>&lt;/a>&lt;br>&#xd;&#xa;Now if we look closely each node is used for specific purpose.&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>jcr:primaryType –&amp;nbsp;The “clientlib” node must be of type&amp;nbsp;cq:ClientLibraryFolder,&amp;nbsp;so that aem understand that this is client lib folder.&lt;/li>&#xd;&#xa;&lt;li>categories –&amp;nbsp;It is used to categorize or identify respective client library folder from where js and css files needs to be included. Value of this field is a String array i.e you could use an existing name here, which means that when we include client library in component jsp file using a category name that is available in more than one client library folder, then js and css files&amp;nbsp;of all such folder will be send in the response.&lt;ul>&#xd;&#xa;&lt;li>If you want to include files from a particular clientlib folder then keep the category name unique.&lt;br>&#xd;&#xa;&lt;i>Note:-&amp;nbsp;categories value&amp;nbsp;is not a unique identifier. It can be assigned to multiple client lib folders.&lt;/i>&lt;/li>&#xd;&#xa;&lt;li>It is advisable to preface the category value by ‘apps’ or ‘etc’ to specify location of clientlibs.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>dependencies –&amp;nbsp;when your client library files are dependent on some other files, you can use dependencies. For example&amp;nbsp;if Clientlib A depends on Clientlib B which depends on Clientlib C, then all clientlibs A,B and C will be included in the page. The order in which they will be included is First C the B then A.&lt;/li>&#xd;&#xa;&lt;li>embed –&amp;nbsp;AEM will merge all embedded clientlibs into the current clientlib. This is usually used for minimizing requests and for accessing clientlibs. Remember it might&amp;nbsp;have size/speed issues if used frequently.&amp;nbsp; For example&amp;nbsp;if Clientlib A embed Clientlib B which embed Clientlib C, then&amp;nbsp;Clientlib A will be be loaded by embedding&amp;nbsp;Clientlib B code. Remember&amp;nbsp;Clientlib C will not be embedded in this case.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h4>Things to notice about Child nodes&amp;nbsp;js.txt and css.txt:-&lt;/h4>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>A java script or css file will be generated by this name when we debug clientlibs, whereas minified file will be created by clientlib folder name.&lt;/li>&#xd;&#xa;&lt;li>Place each file name inside js or css.txt on separate line.&lt;/li>&#xd;&#xa;&lt;li>The first line should start with&amp;nbsp;#base =[root], this refers to the path of folder that contains source file relative to TXT file.&lt;ul>&#xd;&#xa;&lt;li>For example if files are in same folder then write&amp;nbsp;#base =.&lt;/li>&#xd;&#xa;&lt;li>But usually we put TXT file parallel to client library folder. For example&amp;nbsp;#base = js_mobile&amp;nbsp;, where&amp;nbsp;&lt;i>js_mobile&lt;/i>&amp;nbsp;contains js files.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;/li>&#xd;&#xa;&lt;li>You can&amp;nbsp;skip either&amp;nbsp;of the js.txt or css.txt file, if your clientlib only contains resources of one type only.&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                        textIsRich="true"/>
+                </container>
+            </container>
+        </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-22T17:19:36.866+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
+    </jcr:content>
+</jcr:root>
