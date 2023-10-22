@@ -1,0 +1,14 @@
+<div 
+	data-sly-use.footer="com.aem.avengers.core.models.FooterModel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    class="cds-c-aemavengers-footer">
+   <p class="cds-c-aemavengers-footer__copyright"> ${footer.copyright} </p> 
+   <div class="cds-c-aemavengers-footer__social"> 
+        <sly data-sly-list.item="${footer.multiFieldNameMultiList}">                      
+            <a class="cds-c-aemavengers-footer__link" href=${item.url}>
+                <img class="cds-c-aemavengers-footer__icon" src=${item.icon} alt=${item.alttext} style="width:36px;height:36px;">
+            </a>
+        </sly>
+    </div>
+   
+</div>

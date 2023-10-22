@@ -1,0 +1,52 @@
+.cds-c-aemavengers-footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    .cds-c-aemavengers-footer__copyright {
+        grid-column: 1/ span 12;
+        padding: 0;
+        font-size: 12px;
+        text-align: center;
+        @media only screen and (min-width: 1024px) {
+            grid-column: 1/ span 7;
+            grid-row: 1;
+            padding: 0;
+            font-size: 24px;
+            text-align: unset;
+        }
+    }
+    .cds-c-aemavengers-footer__social{
+        display: flex;
+        flex-direction: row;
+        grid-column: 1/span 12;
+        justify-content: space-around;
+
+        @media only screen and (min-width: 1024px){
+            grid-column: 7/span 12;
+            grid-row: 1;
+            display: contents;
+        }
+
+    }
+ 
+
+    .cds-c-aemavengers-footer__link {
+        align-self: center;
+        text-align: center;
+
+        img {
+            .cds-c-aemavengers-footer__icon{
+              //  margin: 10px;
+                width: 24px;
+                height: 24px;
+                @media only screen and (min-width: 1024px) {
+                    margin: 0; 
+                    width: 36px;
+                    height: 36px;        
+
+                }
+            }
+        }
+    }
+}
+
