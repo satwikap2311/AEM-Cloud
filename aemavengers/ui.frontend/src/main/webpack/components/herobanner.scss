@@ -12,6 +12,13 @@
 		@media only screen and (min-width: 1024px) {
 			grid-column: 1/span 6;
 		}
+		.cmp-teaser__title {
+			font-weight: bold;
+
+		}
+		.cds-c-herobanner__pagetitle{
+			font-weight: bold;
+		}
 	}
 	.cmp-teaser__image {
 		grid-column: 1/-1;
