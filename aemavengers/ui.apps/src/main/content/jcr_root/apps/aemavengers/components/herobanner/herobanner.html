@@ -16,8 +16,8 @@
         <div class="cmp-teaser__content">          
             <sly data-sly-call="${titleTemplate.title @ teaser=teaser}"></sly>
             <sly data-sly-call="${pretitleTemplate.pretitle @ teaser=teaser}"></sly>
-           	   ${'yyyy-MM-dd'@format=properties.date}
-               ${pageProperties.jcr:title}
+            <h3 class="cds-c-herobanner__pagetitle">${pageProperties.jcr:title} <br> ${'yyyy-MM-dd'@format=properties.date} <h3>
+             
                
         </div>
         <sly data-sly-call="${imageTemplate.image @ teaser=teaser}"></sly>
