@@ -5,7 +5,8 @@
     <filter root="/content/dam/aemavengers" mode="merge">
         <exclude pattern="/content/dam/aemavengers(/.*)?"/>
         <include pattern="/content/dam/aemavengers/jcr:content(/.*)?"/>
-    </filter>
+	</filter>
     <filter root="/content/dam/aemavengers/asset.jpg" mode="merge"/>
     <filter root="/content/experience-fragments/aemavengers" mode="merge"/>
+<filter root="/content/cq:tags/aem-avengers" mode="merge"/>
 </workspaceFilter>
