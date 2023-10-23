@@ -3,9 +3,11 @@ $(document).on('click','.cmp-search__item',function(){
         var itemTitle = $(this).find('.cmp-search__item-title').text();
         $('#searchInput').val(itemTitle);
     	$('.cmp-search__results').hide();
-    	$('.cmp_search__info').hide();
+    	console.log("checkbox",$('.checkbox-list input[type="checkbox"]'));
+    	$('.checkbox-list input[type="checkbox"]').prop('checked', false);
 });
 $(document).on('click','.submit_btn',function(e){
+    $('.checkbox-list input[type="checkbox"]').prop('checked', false);
     var totalItems = 0;
     var itemsPerPage = 3;
     var currentPage = 1;
