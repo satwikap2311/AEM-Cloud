@@ -124,12 +124,13 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 			sizeObj.addProperty("articlesSize", size);
 			jsonArr.add(sizeObj);
 			if (StringUtils.isNotBlank(currentHit)) {
-				query.setOffset(offset);
-				query.setLimit(limit);
-				nodes = query.execute().getNodes();
-				LOGGER.info("nodes :: {}", nodes);
+//				query.setOffset(offset);
+//				query.setLimit(limit);
+//				NodeIterator limitedNodes = query.execute().getNodes();
+				LOGGER.info("limitedNodes :: {}", nodes.getSize());
 
 //			int loopval = 0;
+				List<Page> pagePathsList = new LinkedList<Page>();
 				while (nodes.hasNext()) {
 //				JsonObject jsonObj = new JsonObject();
 					Node node = nodes.nextNode();
@@ -140,47 +141,23 @@ public class ArticlesListServlet extends SlingAllMethodsServlet {
 					}
 					LOGGER.info("node :: {}", pagePath);
 					Page page = pageManager.getPage(pagePath);
+					pagePathsList.add(page);
 					LOGGER.info("page :: {}", page.getPath());
-					if (page != null && !pagePath.equals(parentPage)) {
-						jsonArr.add(avengersBasicService.addPageProperties(page));
-//					LOGGER.info("jsonObj :: {}", jsonObj);
+				}
+				if (pagePathsList.size() < limit) {
+					limit = pagePathsList.size();
+				}
+				for (int i = offset; i < limit; i++) {
+					if (pagePathsList.size() >= offset) {
+						Page page = pagePathsList.get(i);
+						if (page != null && !page.getPath().equals(parentPage)) {
+							jsonArr.add(avengersBasicService.addPageProperties(page));
+//						LOGGER.info("jsonObj :: {}", jsonObj);
+						}
 					}
+
 				}
 			}
-
-			/*
-			 * for (int i = offset; i <= endValue; i++) { String pagePath = pageList.get(i);
-			 * JsonObject jsonObj = new JsonObject(); boolean isFacet = false; Page page =
-			 * pageManager.getPage(pagePath); if (page != null) { Tag[] cqTags =
-			 * page.getTags(); for (Tag tag : cqTags) { String tagID = tag.getTagID(); for
-			 * (String facet : facetsArr) { if (tagID.equals(facet)) { isFacet = true;
-			 * break; } } } if (isFacet) { String pageTitle = page.getTitle();
-			 * jsonObj.addProperty("pageTitle", pageTitle); ValueMap pageProperties =
-			 * page.getProperties(); if (pageProperties.containsKey("author")) { String
-			 * author = pageProperties.get("author", String.class);
-			 * jsonObj.addProperty("author", author); } if
-			 * (pageProperties.containsKey("date")) { SimpleDateFormat simpleFormat = new
-			 * SimpleDateFormat("dd/MM/yyyy"); Date date = pageProperties.get("date",
-			 * Date.class); String formatedDate = simpleFormat.format(date);
-			 * jsonObj.addProperty("date", formatedDate); }
-			 * 
-			 * } } if (null != jsonObj) { jsonArr.add(jsonObj); // loopval++; } }
-			 */
-
-			/*
-			 * while (nodes.hasNext()) { Node node = nodes.nextNode(); JsonObject jsonObj =
-			 * new JsonObject(); Page page = pageManager.getPage(node.getPath()); if (page
-			 * != null) { if (jsonArr.size() > 0) { boolean isFacet = false; Tag[] cqTags =
-			 * page.getTags(); for (Tag tag : cqTags) { String tagID = tag.getTagID(); for
-			 * (String facet : facetsArr) { if (tagID.equals(facet)) { isFacet = true;
-			 * break; } } } if (isFacet) { jsonObj =
-			 * avengersBasicService.addPageProperties(jsonObj, page); } } else { jsonObj =
-			 * avengersBasicService.addPageProperties(jsonObj, page); } if (null != jsonObj)
-			 * { jsonArr.add(jsonObj); } }
-			 * 
-			 * }
-			 */
-
 			response.getWriter().write(jsonArr.toString());
 		} catch (RepositoryException e) {
 			LOGGER.error("RepositoryException in doGet :: {}", e);

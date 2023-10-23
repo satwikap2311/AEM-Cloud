@@ -3,11 +3,11 @@
         justify-content: flex-end;
         padding-right: 100px;
     }
-    .flex-item{
-        padding:10px;
-        border: 1px solid #ccc; 
-        margin: 5px
-    }
+.flex-item{
+    padding:10px;
+    border: 1px solid #ccc; 
+    margin: 5px
+}
 /* Add this CSS to your styles */
 .checkbox-list {
     padding: 20px;
@@ -15,6 +15,7 @@
     height: 250px;
     background-color: #4e24dc21;
     border-radius: 5px;
+    overflow-y: auto;
 }
 
 .checkbox-item {
@@ -47,7 +48,6 @@
     text-decoration: none;
 }
 .filter_btn {
-    position: absolute;
     background-color: #0074D9; /* Background color */
     color: #FFFFFF; /* Text color */
     border: 2px solid #0074D9; /* Border color */

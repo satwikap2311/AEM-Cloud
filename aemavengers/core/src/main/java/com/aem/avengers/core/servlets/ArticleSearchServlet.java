@@ -102,8 +102,9 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 			QueryResult result = query.execute();
 			NodeIterator nodes = result.getNodes();
 			long size = nodes.getSize();
-			nodes = query.execute().getNodes();
 			JsonArray jsonArr = new JsonArray();
+			int limit = 0;
+			int offset = 0;
 			if (StringUtils.isNotBlank(searchKeyword)) {
 				JsonObject sizeObj = new JsonObject();
 				sizeObj.addProperty("articlesSize", size);
@@ -117,33 +118,35 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 					maxItemsInt = Integer.valueOf(maxItems);
 				}
 
-				int limit = maxItemsInt * hit;
-				int offset = limit - maxItemsInt;
+				limit = maxItemsInt * hit;
+				offset = limit - maxItemsInt;
 
 				LOGGER.info("limit :: {}", limit);
 				LOGGER.info("offset :: {}", offset);
-				query.setLimit(limit);
-				query.setOffset(offset);
-				nodes = query.execute().getNodes();
+//				query.setLimit(limit);
+//				query.setOffset(offset);
+//				nodes = query.execute().getNodes();
 			}
+			List<Page> pagePathsList = new LinkedList<Page>();
 			while (nodes.hasNext()) {
 				Node node = nodes.nextNode();
 				Page page = pageManager.getPage(node.getPath());
-				String tageTitle = "";
-				if (page != null) {
-					/*
-					 * Tag[] cqTags = page.getTags(); for (Tag tag : cqTags) { tageTitle =
-					 * tag.getTitle().toLowerCase(); }
-					 */
-				}
 				String pageTitle = page.getTitle().toLowerCase();
 				ValueMap pageProperties = page.getProperties();
 				String author = "";
 				if (pageProperties.containsKey("author")) {
 					author = pageProperties.get("author", String.class).toLowerCase();
 				}
-				if (StringUtils.isNotBlank(searchKeyword)) {
-					jsonArr.add(avengersBasicService.addPageProperties(page));
+				if (StringUtils.isNotBlank(searchKeyword) && StringUtils.isNotBlank(currentHit)) {
+					String allPagePath = node.getPath();
+					if (StringUtils.isNotBlank(allPagePath) && allPagePath.contains("/" + JcrConstants.JCR_CONTENT)) {
+						allPagePath = allPagePath.replace(("/" + JcrConstants.JCR_CONTENT), "");
+
+					}
+					LOGGER.info("node :: {}", allPagePath);
+					Page allPage = pageManager.getPage(allPagePath);
+					pagePathsList.add(allPage);
+					LOGGER.info("page :: {}", allPage.getPath());
 				}
 				if (StringUtils.isNotBlank(typeKeyword)) {
 					if (StringUtils.isNotBlank(author) && author.startsWith(typeKeyword)) {
@@ -151,13 +154,24 @@ public class ArticleSearchServlet extends SlingAllMethodsServlet {
 							keyWordList.add(author);
 						}
 					}
-					/*
-					 * if (StringUtils.isNotBlank(tageTitle) && tageTitle.startsWith(typeKeyword)) {
-					 * if (!keyWordList.contains(tageTitle)) { keyWordList.add(tageTitle); } }
-					 */
 					if (StringUtils.isNotBlank(pageTitle) && pageTitle.startsWith(typeKeyword)) {
 						if (!keyWordList.contains(pageTitle)) {
 							keyWordList.add(pageTitle);
+						}
+					}
+
+				}
+			}
+			if (StringUtils.isNotBlank(searchKeyword) && !pagePathsList.isEmpty()) {
+				if (pagePathsList.size() < limit) {
+					limit = pagePathsList.size();
+				}
+				for (int i = offset; i < limit; i++) {
+					if (pagePathsList.size() >= offset) {
+						Page allPage = pagePathsList.get(i);
+						if (allPage != null) {
+							jsonArr.add(avengersBasicService.addPageProperties(allPage));
+//						LOGGER.info("jsonObj :: {}", jsonObj);
 						}
 					}
 
