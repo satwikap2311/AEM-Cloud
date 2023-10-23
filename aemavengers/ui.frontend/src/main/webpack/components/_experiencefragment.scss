@@ -6,7 +6,7 @@ header.experiencefragment {
     .navigation{
         display: grid;
         grid-template-columns: repeat(12, 1fr); 
-        background: lightslategrey;;
+        background: #b89d9d;
     }
     .cmp-navigation {
         height: auto;
@@ -84,6 +84,7 @@ header.experiencefragment {
 
 }
 footer.experiencefragment {
-    background: lightslategrey;
+    background: #b89d9d;
     padding: 0 !important;
+    height: 100px;
 }

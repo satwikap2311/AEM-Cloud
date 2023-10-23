@@ -1,6 +1,7 @@
 .cds-c-aemavengers-footer {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    padding: 24px;
 
     .cds-c-aemavengers-footer__copyright {
         grid-column: 1/ span 12;
