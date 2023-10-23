@@ -9,22 +9,32 @@
             line-height: 0;
 			.cmp-image {
 				height: 100%;
+				&__image {
+					//aspect-ratio: unset;
+					//object-fit: none;
+					height: 100%;
+					width: 100% !important;
+				}
 			}
+
+			
 		}
 		
 	}
 	.cmp-teaser__content {
 		grid-column: 1/-1;		
-		display: flex;	
 		background:#b89d9d;
 		justify-content: center;
    	 	flex-direction: column;
     	align-items: center;
 		
 		.cmp-teaser__title {    			
-			font-size: 50px;
+			font-size: 20px;
 			margin: 16px;
-			text-align: center;
+			text-align: start;
+			@media only screen and (min-width: 1024px) {
+				text-align: center;
+			}
 		}
 		.cmp-teaser__description {
 			display: block;
