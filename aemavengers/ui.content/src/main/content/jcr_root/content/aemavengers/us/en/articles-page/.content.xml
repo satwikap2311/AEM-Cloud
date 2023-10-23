@@ -2,12 +2,19 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2023-10-22T17:33:35.152+05:30"
+        cq:contextHubPath="/etc/cloudsettings/default/contexthub"
+        cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2023-10-23T10:35:58.634+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Articles Page"
-        sling:resourceType="aemavengers/components/page">
+        jcr:title="Home Page"
+        sling:resourceType="aemavengers/components/page"
+        author="Adobe"
+        date="{Date}2023-10-15T00:00:00.000+05:30"
+        pwaCachestrategy="staleWhileRevalidate"
+        pwaDisplay="standalone"
+        pwaOrientation="any">
         <root
             jcr:primaryType="nt:unstructured"
             sling:resourceType="aemavengers/components/container"
@@ -19,6 +26,23 @@
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="aemavengers/components/container">
+                    <highlight
+                        jcr:created="{Date}2023-10-23T10:17:52.226+05:30"
+                        jcr:createdBy="admin"
+                        jcr:description="&lt;ul>&#xd;&#xa;&lt;li>&lt;i>&lt;b>AEM Frontend&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/b>&lt;/i>&lt;/li>&#xd;&#xa;&lt;li>&lt;i>&lt;b>AEM Backend&lt;/b>&lt;/i>&lt;/li>&#xd;&#xa;&lt;li>&lt;i>&lt;b>AEM Basics&lt;/b>&lt;/i>&lt;/li>&#xd;&#xa;&lt;li>&lt;i>&lt;b>AEM UI&lt;/b>&lt;/i>&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;"
+                        jcr:lastModified="{Date}2023-10-23T10:35:58.627+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="AEM Technologies"
+                        sling:resourceType="aemavengers/components/highlight"
+                        descriptionFromPage="false"
+                        fileName="articles.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="true"
+                        textIsRich="true"
+                        titleFromPage="false">
+                        <file/>
+                    </highlight>
                     <articlecard
                         jcr:created="{Date}2023-10-20T12:07:27.777+05:30"
                         jcr:createdBy="admin"
@@ -28,9 +52,43 @@
                         sling:resourceType="aemavengers/components/articlecard"
                         articleRootPath="/content/aemavengers/us/en/articles-page"
                         title="sumanth"/>
+                    <quicksearch
+                        jcr:created="{Date}2023-10-23T07:53:25.841+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-23T09:57:04.812+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/quicksearch"
+                        buttonLabel="Search"
+                        searchRoot="/content/aemavengers/us/en/articles-page"/>
+                    <articlelist
+                        jcr:created="{Date}2023-10-23T07:54:58.332+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-23T07:56:34.542+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="aemavengers/components/articlelist"
+                        childDepth="1"
+                        displayItemAsTeaser="false"
+                        fecets="true"
+                        linkItems="false"
+                        listFrom="children"
+                        maxItems="3"
+                        pagination="true"
+                        parentPage="/content/aemavengers/us/en/articles-page"
+                        showDescription="false"
+                        showModificationDate="false"
+                        sortOrder="asc"
+                        tagsMatch="any"/>
                 </container>
             </container>
         </root>
+        <cq:featuredimage
+            jcr:lastModified="{Date}2023-10-23T07:44:06.954+05:30"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="core/wcm/components/image/v3/image"
+            altValueFromDAM="false"/>
     </jcr:content>
     <sling-models/>
     <sling-servlets/>

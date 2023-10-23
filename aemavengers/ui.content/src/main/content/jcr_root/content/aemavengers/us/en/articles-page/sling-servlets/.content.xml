@@ -4,14 +4,14 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2023-10-22T17:06:02.384+05:30"
+        cq:lastModified="{Date}2023-10-23T12:56:59.769+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[aem-avengers:aem-backend,aem-avengers:aem-backend/sling-servlets]"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Sling Servlets"
+        jcr:title="Sling Servlet"
         sling:resourceType="aemavengers/components/page"
-        author="Adobe"
+        author="Avengers Backend"
         date="{Date}2023-10-16T00:00:00.000+05:30"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
@@ -34,15 +34,19 @@
                     <herobanner
                         jcr:created="{Date}2023-10-22T09:43:12.879+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T09:43:30.133+05:30"
+                        jcr:lastModified="{Date}2023-10-23T09:07:38.392+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
+                        jcr:title="Sling Servlet"
                         sling:resourceType="aemavengers/components/herobanner"
                         altValueFromDAM="false"
                         date="{Date}2023-10-23T00:00:00.000+05:30"
+                        fileName="servlet1.png"
                         imageFromPageImage="false"
                         isDecorative="false"
-                        titleFromPage="true"/>
+                        titleFromPage="false">
+                        <file/>
+                    </herobanner>
                     <text
                         jcr:created="{Date}2023-10-22T09:43:48.001+05:30"
                         jcr:createdBy="admin"
@@ -56,7 +60,7 @@
             </container>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2023-10-22T17:06:02.269+05:30"
+            jcr:lastModified="{Date}2023-10-23T12:56:59.769+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"

@@ -4,14 +4,14 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2023-10-22T17:21:08.877+05:30"
+        cq:lastModified="{Date}2023-10-23T13:21:49.213+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[aem-avengers:aem-ui,aem-avengers:aem-ui/js]"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="JS"
         sling:resourceType="aemavengers/components/page"
-        author="Adobe"
+        author="Avengers UI"
         date="{Date}2023-10-10T00:00:00.000+05:30"
         pageTitle="JS"
         pwaCachestrategy="staleWhileRevalidate"
@@ -32,6 +32,21 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="aemavengers/components/container"
                     layout="responsiveGrid">
+                    <herobanner
+                        jcr:created="{Date}2023-10-22T14:57:32.461+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2023-10-23T13:21:49.151+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="JS"
+                        sling:resourceType="aemavengers/components/herobanner"
+                        date="{Date}2023-10-10T00:00:00.000+05:30"
+                        fileName="js.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="true"
+                        titleFromPage="true">
+                        <file/>
+                    </herobanner>
                     <text
                         jcr:created="{Date}2023-10-22T10:29:32.750+05:30"
                         jcr:createdBy="admin"
@@ -41,18 +56,11 @@
                         sling:resourceType="aemavengers/components/text"
                         text="&lt;h2>JavaScript Variables&lt;/h2>&#xd;&#xa;&lt;p>JavaScript variables are containers for storing data values.&lt;/p>&#xd;&#xa;&lt;p>In this example, x, y, and z, are variables:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>var&amp;nbsp;x =&amp;nbsp;5;&lt;br>&#xd;&#xa;var&amp;nbsp;y =&amp;nbsp;6;&lt;br>&#xd;&#xa;var&amp;nbsp;z = x + y;&lt;/p>&#xd;&#xa;&lt;p>From the example above, you can expect:&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>x stores the value 5&lt;/li>&#xd;&#xa;&lt;li>y stores the value 6&lt;/li>&#xd;&#xa;&lt;li>z stores the value 11&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h2>JavaScript Numbers&lt;/h2>&#xd;&#xa;&lt;p>JavaScript has only&amp;nbsp;one type&amp;nbsp;of number. Numbers can be written with or without decimals.&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>var&amp;nbsp;x =&amp;nbsp;3.14;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;// A number with decimals&lt;br>&#xd;&#xa;var&amp;nbsp;y =&amp;nbsp;3;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;// A number without decimals&lt;/p>&#xd;&#xa;&lt;p>All numbers are stored as double precision floating point numbers.&lt;/p>&#xd;&#xa;&lt;p>The maximum number of decimals is 17, but floating point is not always 100% accurate:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>var&amp;nbsp;x =&amp;nbsp;0.2&amp;nbsp;+&amp;nbsp;0.1;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;// x will be 0.30000000000000004&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Strings&lt;/h2>&#xd;&#xa;&lt;p>Strings&amp;nbsp;store text. Strings are written inside quotes. You can use&amp;nbsp;single&amp;nbsp;or double&amp;nbsp;quotes:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>var&amp;nbsp;carname =&amp;nbsp;&amp;quot;Volvo XC60&amp;quot;;&amp;nbsp;&amp;nbsp;// Double quotes&lt;br>&#xd;&#xa;var&amp;nbsp;carname =&amp;nbsp;'Volvo XC60';&amp;nbsp;&amp;nbsp;// Single quotes&lt;/p>&#xd;&#xa;&lt;p>The length of a string is found in the built in property&amp;nbsp;length:&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>var&amp;nbsp;txt =&amp;nbsp;&amp;quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&amp;quot;;&lt;br>&#xd;&#xa;var&amp;nbsp;sln = txt.length;&lt;/p>&#xd;&#xa;&lt;p>ADVERTISEMENT&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Objects&lt;/h2>&#xd;&#xa;&lt;p>You have already learned that JavaScript variables are containers for data values.&lt;/p>&#xd;&#xa;&lt;p>This code assigns a&amp;nbsp;simple value&amp;nbsp;(Fiat) to a&amp;nbsp;variable&amp;nbsp;named car:&lt;/p>&#xd;&#xa;&lt;p>var&amp;nbsp;car =&amp;nbsp;&amp;quot;Fiat&amp;quot;;&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;p>Objects are variables too. But objects can contain many values.&lt;/p>&#xd;&#xa;&lt;p>This code assigns&amp;nbsp;many values&amp;nbsp;(Fiat, 500, white) to a&amp;nbsp;variable&amp;nbsp;named car:&lt;/p>&#xd;&#xa;&lt;p>var&amp;nbsp;car = {type:&amp;quot;Fiat&amp;quot;, model:&amp;quot;500&amp;quot;, color:&amp;quot;white&amp;quot;};&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Arrays&lt;/h2>&#xd;&#xa;&lt;p>JavaScript arrays are used to store multiple values in a single variable.&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>var&amp;nbsp;cars = [&amp;quot;Saab&amp;quot;,&amp;nbsp;&amp;quot;Volvo&amp;quot;,&amp;nbsp;&amp;quot;BMW&amp;quot;];&lt;/p>&#xd;&#xa;&lt;p>&amp;nbsp;&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Functions&lt;/h2>&#xd;&#xa;&lt;p>A JavaScript function is a block of code designed to perform a particular task.&lt;/p>&#xd;&#xa;&lt;p>A JavaScript function is executed when &amp;quot;something&amp;quot; invokes it (calls it).&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>function&amp;nbsp;myFunction(p1, p2) {&lt;br>&#xd;&#xa;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;return&amp;nbsp;p1 * p2; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;// The function returns the product of p1 and p2&lt;br>&#xd;&#xa;}&lt;br>&#xd;&#xa;&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://www.w3schools.com/whatis/tryit.asp?filename=trywhatis_js_functions&quot;>Try it Yourself »&lt;/a>&lt;/p>&#xd;&#xa;&lt;h2>What can JavaScript Do?&lt;/h2>&#xd;&#xa;&lt;p>This section contains some examples of what JavaScript can do:&lt;/p>&#xd;&#xa;&lt;ul>&#xd;&#xa;&lt;li>JavaScript Can Change HTML Content&lt;/li>&#xd;&#xa;&lt;li>JavaScript Can Change HTML Attribute Values&lt;/li>&#xd;&#xa;&lt;li>JavaScript Can Change HTML Styles (CSS)&lt;/li>&#xd;&#xa;&lt;li>JavaScript Can Hide HTML Elements&lt;/li>&#xd;&#xa;&lt;li>JavaScript Can Show HTML Elements&lt;/li>&#xd;&#xa;&lt;/ul>&#xd;&#xa;&lt;h2>JavaScript Can Change HTML Content&lt;/h2>&#xd;&#xa;&lt;p>One of many JavaScript HTML methods is&amp;nbsp;getElementById().&lt;/p>&#xd;&#xa;&lt;p>This example uses the method to &amp;quot;find&amp;quot; an HTML element (with id=&amp;quot;demo&amp;quot;) and changes the element content (innerHTML) to &amp;quot;Hello JavaScript&amp;quot;:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>document.getElementById(&amp;quot;demo&amp;quot;).innerHTML&amp;nbsp;=&amp;nbsp;&amp;quot;Hello JavaScript&amp;quot;;&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://www.w3schools.com/whatis/tryit.asp?filename=trywhatis_js_inner_html&quot;>Try it Yourself »&lt;/a>&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Can Change HTML Attribute Values&lt;/h2>&#xd;&#xa;&lt;p>In this example JavaScript changes the value of the src (source) attribute of an &amp;lt;img&amp;gt; tag:&lt;/p>&#xd;&#xa;&lt;h3>The Light Bulb&lt;/h3>&#xd;&#xa;&lt;p>Turn on the light&amp;nbsp;&lt;img src=&quot;https://www.w3schools.com/whatis/img_bulboff.gif&quot; width=&quot;100&quot;>&amp;nbsp;Turn off the light&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://www.w3schools.com/whatis/tryit.asp?filename=trywhatis_js_lightbulb&quot;>Try it Yourself »&lt;/a>&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Can Change HTML Styles (CSS)&lt;/h2>&#xd;&#xa;&lt;p>Changing the style of an HTML element, is a variant of changing an HTML attribute:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>document.getElementById(&amp;quot;demo&amp;quot;).style.fontSize&amp;nbsp;=&amp;nbsp;&amp;quot;35px&amp;quot;;&lt;br>&#xd;&#xa;or&lt;br>&#xd;&#xa;document.getElementById('demo').style.fontSize&amp;nbsp;=&amp;nbsp;'35px';&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://www.w3schools.com/whatis/tryit.asp?filename=trywhatis_js_style&quot;>Try it Yourself »&lt;/a>&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Can Hide HTML Elements&lt;/h2>&#xd;&#xa;&lt;p>Hiding HTML elements can be done by changing the display style:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>document.getElementById(&amp;quot;demo&amp;quot;).style.display&amp;nbsp;=&amp;nbsp;&amp;quot;none&amp;quot;;&lt;br>&#xd;&#xa;or&lt;br>&#xd;&#xa;document.getElementById('demo').style.display&amp;nbsp;=&amp;nbsp;'none';&lt;/p>&#xd;&#xa;&lt;p>&lt;a href=&quot;https://www.w3schools.com/whatis/tryit.asp?filename=trywhatis_js_hide&quot;>Try it Yourself »&lt;/a>&lt;/p>&#xd;&#xa;&lt;h2>JavaScript Can Show HTML Elements&lt;/h2>&#xd;&#xa;&lt;p>Showing hidden HTML elements can also be done by changing the display style:&lt;/p>&#xd;&#xa;&lt;h3>Example&lt;/h3>&#xd;&#xa;&lt;p>document.getElementById(&amp;quot;demo&amp;quot;).style.display&amp;nbsp;=&amp;nbsp;&amp;quot;block&amp;quot;;&lt;br>&#xd;&#xa;or&lt;br>&#xd;&#xa;document.getElementById('demo').style.display&amp;nbsp;=&amp;nbsp;'block';&lt;/p>&#xd;&#xa;"
                         textIsRich="true"/>
-                    <herobanner
-                        jcr:created="{Date}2023-10-22T14:57:32.461+05:30"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T14:57:32.461+05:30"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="aemavengers/components/herobanner"/>
                 </container>
             </container>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2023-10-22T17:21:08.863+05:30"
+            jcr:lastModified="{Date}2023-10-23T13:14:14.132+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"

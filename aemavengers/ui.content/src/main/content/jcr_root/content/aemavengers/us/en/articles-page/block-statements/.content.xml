@@ -4,13 +4,15 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2023-10-22T17:23:20.551+05:30"
+        cq:lastModified="{Date}2023-10-23T13:03:21.004+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[aem-avengers:aem-frontend,aem-avengers:aem-frontend/block-statements]"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="Block Statements"
         sling:resourceType="aemavengers/components/page"
+        author="Avengers Frontend"
+        date="{Date}2023-10-11T00:00:00.000+05:30"
         pageTitle="Block Statements"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
@@ -33,10 +35,18 @@
                     <herobanner
                         jcr:created="{Date}2023-10-22T09:52:57.779+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T09:52:57.779+05:30"
+                        jcr:lastModified="{Date}2023-10-23T09:14:04.985+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="aemavengers/components/herobanner"/>
+                        jcr:title="Adobe"
+                        sling:resourceType="aemavengers/components/herobanner"
+                        date="{Date}2023-10-10T00:00:00.000+05:30"
+                        fileName="blockstatements.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="true"
+                        titleFromPage="true">
+                        <file/>
+                    </herobanner>
                     <text
                         jcr:created="{Date}2023-10-22T09:53:03.863+05:30"
                         jcr:createdBy="admin"
@@ -50,7 +60,7 @@
             </container>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2023-10-22T17:23:20.551+05:30"
+            jcr:lastModified="{Date}2023-10-23T13:03:20.998+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"

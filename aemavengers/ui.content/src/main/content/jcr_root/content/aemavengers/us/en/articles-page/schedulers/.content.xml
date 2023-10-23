@@ -4,13 +4,15 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2023-10-22T17:09:29.453+05:30"
+        cq:lastModified="{Date}2023-10-23T13:00:38.496+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[aem-avengers:aem-backend,aem-avengers:aem-backend/schedulers]"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="Schedulers"
         sling:resourceType="aemavengers/components/page"
+        author="Avengers Backend"
+        date="{Date}2023-10-02T00:00:00.000+05:30"
         pageTitle="Schedulers"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
@@ -31,12 +33,20 @@
                     sling:resourceType="aemavengers/components/container"
                     layout="responsiveGrid">
                     <herobanner
-                        jcr:created="{Date}2023-10-22T09:49:54.993+05:30"
+                        jcr:created="{Date}2023-10-23T08:49:16.868+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T09:49:54.993+05:30"
+                        jcr:lastModified="{Date}2023-10-23T08:59:37.887+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="aemavengers/components/herobanner"/>
+                        jcr:title="Schedulers"
+                        sling:resourceType="aemavengers/components/herobanner"
+                        date="{Date}2023-10-02T00:00:00.000+05:30"
+                        fileName="scheduler.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="true"
+                        titleFromPage="false">
+                        <file/>
+                    </herobanner>
                     <text
                         jcr:created="{Date}2023-10-22T09:50:05.587+05:30"
                         jcr:createdBy="admin"
@@ -50,7 +60,7 @@
             </container>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2023-10-22T17:09:29.442+05:30"
+            jcr:lastModified="{Date}2023-10-23T13:00:38.443+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"

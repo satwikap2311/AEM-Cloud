@@ -4,13 +4,15 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2023-10-22T17:23:58.402+05:30"
+        cq:lastModified="{Date}2023-10-23T13:05:07.785+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[aem-avengers:aem-frontend,aem-avengers:aem-frontend/component]"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="Component "
         sling:resourceType="aemavengers/components/page"
+        author="Avengers Frontend"
+        date="{Date}2023-10-02T00:00:00.000+05:30"
         pageTitle="Component"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
@@ -33,10 +35,18 @@
                     <herobanner
                         jcr:created="{Date}2023-10-22T09:57:37.296+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T09:57:37.296+05:30"
+                        jcr:lastModified="{Date}2023-10-23T09:17:19.106+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="aemavengers/components/herobanner"/>
+                        jcr:title="Component "
+                        sling:resourceType="aemavengers/components/herobanner"
+                        date="{Date}2023-10-03T00:00:00.000+05:30"
+                        fileName="component.jpg"
+                        imageFromPageImage="false"
+                        isDecorative="true"
+                        titleFromPage="true">
+                        <file/>
+                    </herobanner>
                     <text
                         jcr:created="{Date}2023-10-22T09:57:46.223+05:30"
                         jcr:createdBy="admin"
@@ -50,7 +60,7 @@
             </container>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2023-10-22T17:23:58.355+05:30"
+            jcr:lastModified="{Date}2023-10-23T13:05:07.775+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"

@@ -4,13 +4,15 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
-        cq:lastModified="{Date}2023-10-22T17:24:47.517+05:30"
+        cq:lastModified="{Date}2023-10-23T13:08:11.305+05:30"
         cq:lastModifiedBy="admin"
         cq:tags="[aem-avengers:aem-basics,aem-avengers:aem-basics/content-fragments]"
         cq:template="/conf/aemavengers/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Content Fragment"
+        jcr:title=" Content Fragments"
         sling:resourceType="aemavengers/components/page"
+        author="Avengers Basics"
+        date="{Date}2023-10-03T00:00:00.000+05:30"
         pageTitle="Content Fragment"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
@@ -33,22 +35,32 @@
                     <herobanner
                         jcr:created="{Date}2023-10-22T10:02:00.045+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T10:02:00.045+05:30"
+                        jcr:lastModified="{Date}2023-10-23T09:23:42.552+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="aemavengers/components/herobanner"/>
+                        jcr:title="Content Fragment"
+                        sling:resourceType="aemavengers/components/herobanner"
+                        date="{Date}2023-10-10T00:00:00.000+05:30"
+                        fileName="CF.png"
+                        imageFromPageImage="false"
+                        isDecorative="true"
+                        titleFromPage="true">
+                        <file/>
+                    </herobanner>
                     <text
                         jcr:created="{Date}2023-10-22T10:02:21.368+05:30"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2023-10-22T10:02:21.368+05:30"
+                        jcr:lastModified="{Date}2023-10-23T09:22:50.650+05:30"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="aemavengers/components/text"/>
+                        sling:resourceType="aemavengers/components/text"
+                        text="&lt;h1>Authoring Content Fragments&lt;/h1>&#xd;&#xa;&lt;p>Content Fragments are a content abstraction in AEM that allows text-based content to be authored and managed independently of the channels it supports.&lt;/p>&#xd;&#xa;&lt;p>AEM Content Fragments are text-based editorial content that may include some structured data elements associated but considered pure content without design or layout information. Content Fragments are typically created as channel-agnostic content, that is intended to be used and re-used across channels, which in turn wrap the content in a context-specific experience.&lt;/p>&#xd;&#xa;&lt;p>This video series covers the authoring life-cycle of Content Fragments in AEM. Details about&amp;nbsp;&lt;a href=&quot;https://experienceleague.adobe.com/docs/experience-manager-learn/sites/content-fragments/content-fragments-delivery-feature-video-use.html?lang=en&quot;>delivering Content Fragments can be found here&lt;/a>.&lt;/p>&#xd;&#xa;&lt;ol>&#xd;&#xa;&lt;li>Enabling and defining Content Fragment Models&lt;/li>&#xd;&#xa;&lt;li>Authoring Content Fragments&lt;/li>&#xd;&#xa;&lt;li>Downloading Content Fragments&lt;/li>&#xd;&#xa;&lt;li>Editorial capabilities&lt;/li>&#xd;&#xa;&lt;/ol>&#xd;&#xa;&lt;h2>Defining Content Fragment Models&lt;/h2>&#xd;&#xa;&lt;p>&amp;nbsp;Transcript&lt;/p>&#xd;&#xa;&lt;p>AEM Content Fragments Models, the data schemas of Content Fragments, must be enabled via AEM’s&amp;nbsp;&lt;a href=&quot;https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/configurations.html?lang=en&quot;>Configuration Browser&lt;/a>, which allows Content Fragment Models to be defined on a per configuration basis.&lt;/p>&#xd;&#xa;&lt;h2>Creating Content Fragments&lt;/h2>&#xd;&#xa;&lt;p>&amp;nbsp;Transcript&lt;/p>&#xd;&#xa;&lt;p>AEM configurations are applied to AEM Assets folder hierarchies to allow their Content Fragment Models to be created as Content Fragments. Content Fragments support a rich form-based authoring experience allowing content to be modeled as a collection of elements.&lt;/p>&#xd;&#xa;&lt;p>Content Fragments can have multiple variants, each variant addressing a different use-case (thought, not necessarily channel) for the content.&lt;/p>&#xd;&#xa;"
+                        textIsRich="true"/>
                 </container>
             </container>
         </root>
         <cq:featuredimage
-            jcr:lastModified="{Date}2023-10-22T17:24:47.504+05:30"
+            jcr:lastModified="{Date}2023-10-23T13:08:11.300+05:30"
             jcr:lastModifiedBy="admin"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="core/wcm/components/image/v3/image"
