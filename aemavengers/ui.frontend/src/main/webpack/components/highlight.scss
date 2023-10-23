@@ -1,8 +1,7 @@
 .cds-c-highlight{
 	display:grid;
 	grid-template-columns: repeat(12, 1fr);
-	margin: 36px 0;
-    padding: 0 16px;
+	margin-bottom: 16px;
 	.cmp-teaser__image {
 		grid-column: 1/-1;
 		@media only screen and (min-width: 1024px) {
